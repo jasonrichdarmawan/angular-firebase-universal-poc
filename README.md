@@ -45,6 +45,17 @@ disadvantage: static / pre-rendered content is not tailored to the user.
 TODO:
 - [ ] region-specific pre-rendered content.
 
+    Bad solution: Server Side Rendered HTML for everyone.
+    1. When a Googlebot visit `/experiences`, Angular will redirect it to `/experiences/:region`. The Googlebot will get a `Server Side Rendered HTML`.
+    2. When a user visit `/experiences`, Angular will redirect it to `/experiences/:region`. The user will get a `Server Side Rendered HTML`.
+
+    disadvantage: what about the new experience?
+
+    Good solution: Dynamic Rendering
+    1. When a Googlebot visit `/experiences`, Angular will redirect it to `/experiences/:region`. The Googlebot will get a `Server Side Rendered HTML`.
+    2. When a user visit `/experiences`, Angular will redirect it to `/experiences/:region`. The user will get a `Client Side Rendered HTML`.
+    3. The server periodically prerender new experience i.e. every 5 minutes.
+
 Command to run:
 ```
 npx ng run angular-firebase-universal-poc:prerender --no-guess-routes --routes-file routes.txt
