@@ -10,6 +10,11 @@ npx @angular/cli@13 new angular-firebase-universal-poc
 npx ng update @angluar/core@13 @angular/cli@13
 ```
 
+3. Install algoliasearch
+```
+npm install algoliasearch
+```
+
 # AngularFirebaseUniversalPoc
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.

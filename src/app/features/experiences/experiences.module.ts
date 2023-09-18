@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage, NgOptimizedImageModule } from '@angular/common';
 
 import { ExperiencesRoutingModule } from './experiences-routing.module';
 import { ExperiencesComponent } from './presentation/pages/experiences/experiences.component';
+import { GetExperiencesDataSource } from './data/datasources/get-experiences.datasource';
+import { GetExperiencesUseCase } from './domain/usecases/get-experiences.service';
 
 
 @NgModule({
@@ -11,7 +13,17 @@ import { ExperiencesComponent } from './presentation/pages/experiences/experienc
   ],
   imports: [
     CommonModule,
-    ExperiencesRoutingModule
-  ]
+    ExperiencesRoutingModule,
+    
+    // TODO: standalone component in Angular 14
+    // for ExperienceComponent
+    NgOptimizedImageModule
+  ],
+  providers: [
+    // TODO: standalone component in Angular 14
+    // for ExperiencesComponent
+    GetExperiencesUseCase,
+    GetExperiencesDataSource
+  ],
 })
 export class ExperiencesModule { }
