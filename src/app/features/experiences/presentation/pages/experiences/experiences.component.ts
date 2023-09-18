@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { GetExperiencesDataSource } from '../../../data/datasources/get-experiences.datasource';
 import { GetExperiencesUseCase } from '../../../domain/usecases/get-experiences.service';
 import { Experience } from '../../../domain/entities/experiences.entity';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-experiences',
@@ -9,9 +10,16 @@ import { Experience } from '../../../domain/entities/experiences.entity';
   styleUrls: ['./experiences.component.scss']
 })
 export class ExperiencesComponent implements OnInit {
-  experiences: Experience[] = []
+  isBrowser: boolean;
 
-  constructor(private getExperiencesUseCase: GetExperiencesUseCase) { }
+  experiences: Experience[] = [];
+
+  constructor(
+    @Inject(PLATFORM_ID) platformID: string,
+    private getExperiencesUseCase: GetExperiencesUseCase
+  ) {
+    this.isBrowser = isPlatformBrowser(platformID);
+  }
 
   ngOnInit(): void {
     this.getExperiencesUseCase.get()
