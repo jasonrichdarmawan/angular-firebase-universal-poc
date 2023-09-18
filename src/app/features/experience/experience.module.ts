@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ExperienceRoutingModule } from './experience-routing.module';
-import { ExperienceComponent } from './experience/experience.component';
+import { ExperienceComponent } from './presentation/pages/experience/experience.component';
 
 
 @NgModule({
