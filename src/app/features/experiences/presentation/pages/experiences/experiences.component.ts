@@ -3,6 +3,7 @@ import { GetExperiencesDataSource } from '../../../data/datasources/get-experien
 import { GetExperiencesUseCase } from '../../../domain/usecases/get-experiences.service';
 import { Experience } from '../../../domain/entities/experiences.entity';
 import { isPlatformBrowser } from '@angular/common';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-experiences',
@@ -16,9 +17,16 @@ export class ExperiencesComponent implements OnInit {
 
   constructor(
     @Inject(PLATFORM_ID) platformID: string,
+    private meta: Meta,
     private getExperiencesUseCase: GetExperiencesUseCase
   ) {
     this.isBrowser = isPlatformBrowser(platformID);
+    this.meta.updateTag(
+      { 
+        name: "description", 
+        content: "An Experience is a unique activity hosted by one of our Hubs, with emphasis on the power of both collaborative and experiential learning."
+      }
+    )
   }
 
   ngOnInit(): void {

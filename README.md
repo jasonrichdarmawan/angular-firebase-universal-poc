@@ -1,3 +1,11 @@
+# Client and Server Component
+
+![Client and Server Component](./README_assets/mereka.io%20-%20Angular%20Universal%20Checklist-Client%20and%20Server%20Component.drawio.svg)
+
+# Architectural Pattern
+
+![Architectural Pattern](./README_assets/mereka.io%20-%20Angular%20Universal%20Checklist-Architectural%20Pattern.drawio.svg)
+
 # Steps to reproduce
 
 1. Create new project with Angular 13
@@ -27,6 +35,10 @@ Command to run:
 ```
 npx ng add @nguniversal/express-engine
 ```
+
+# Result
+
+![Result](./README_assets/mereka.io%20-%20Angular%20Universal%20-%20PoC%20_experiences.drawio.svg)
 
 # AngularFirebaseUniversalPoc
 
