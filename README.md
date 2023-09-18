@@ -36,6 +36,27 @@ Command to run:
 npx ng add @nguniversal/express-engine
 ```
 
+# Solution to fix slow TTFB: Prerender
+
+1. Prerender
+
+disadvantage: static / pre-rendered content is not tailored to the user.
+
+TODO:
+- [ ] region-specific pre-rendered content.
+
+Command to run:
+```
+npx ng run angular-firebase-universal-poc:prerender --no-guess-routes --routes-file routes.txt
+```
+
+2. Starts the server scripts for serving the application lcoally with server-side rendering.
+
+Command to run:
+```
+npm run serve:ssr
+```
+
 # Result
 
 ![Result](./README_assets/mereka.io%20-%20Angular%20Universal%20-%20PoC%20_experiences.drawio.svg)

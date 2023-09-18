@@ -1,5 +1,6 @@
 <a routerLink="">Go to Home</a>
 <p>experiences works!</p>
+<button (click)="updateExperiences()">update experiences</button>
 <ng-container *ngFor="let experience of experiences">
     <div class="bordered">
         <ng-container *ngIf="isBrowser && experience.coverPhotoUrl">
