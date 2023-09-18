@@ -30,17 +30,10 @@ export class ExperiencesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getExperiencesUseCase.get()
-    .then((response) => {
-      this.experiences = response;
-    })
-    .catch((error) => {
-      console.log(error);
-    })
+    this.updateExperiences();
   }
 
   updateExperiences() {
-    console.log("update experiences");
     this.getExperiencesUseCase.get()
     .then((response) => {
       this.experiences = response;
