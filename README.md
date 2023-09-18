@@ -1,18 +1,31 @@
 # Steps to reproduce
 
 1. Create new project with Angular 13
+
+Command to run:
 ```
 npx @angular/cli@13 new angular-firebase-universal-poc
 ```
 
 2. Update to Angular 13.4.0
+
+Command to run:
 ```
 npx ng update @angluar/core@13 @angular/cli@13
 ```
 
 3. Install algoliasearch
+
+Command to run:
 ```
 npm install algoliasearch
+```
+
+4. Install Angular Universal
+
+Command to run:
+```
+npx ng add @nguniversal/express-engine
 ```
 
 # AngularFirebaseUniversalPoc
