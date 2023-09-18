@@ -1,3 +1,15 @@
+# Steps to reproduce
+
+1. Create new project with Angular 13
+```
+npx @angular/cli@13 new angular-firebase-universal-poc
+```
+
+2. Update to Angular 13.4.0
+```
+npx ng update @angluar/core@13 @angular/cli@13
+```
+
 # AngularFirebaseUniversalPoc
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
