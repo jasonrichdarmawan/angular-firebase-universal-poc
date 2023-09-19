@@ -45,16 +45,17 @@ disadvantage: static / pre-rendered content is not tailored to the user.
 TODO:
 - [ ] region-specific pre-rendered content.
 
-    Bad solution: Server Side Rendered HTML for everyone.
-    1. When a Googlebot visit `/experiences`, Angular will redirect it to `/experiences/:region`. The Googlebot will get a `Server Side Rendered HTML`.
-    2. When a user visit `/experiences`, Angular will redirect it to `/experiences/:region`. The user will get a `Server Side Rendered HTML`.
+    Bad solution: pre-rendered HTML for everyone.
+    1. When a Googlebot visit `/experiences`, Angular will redirect it to `/experiences/:region`. The Googlebot will get a `pre-rendered HTML`.
+    2. When a user visit `/experiences`, Angular will redirect it to `/experiences/:region`. The user will get a `pre-rendered HTML`.
+    3. The server periodically prerender the new experience i.e. every 5 minutes.
 
     disadvantage: what about the new experience?
 
     Good solution: Dynamic Rendering
-    1. When a Googlebot visit `/experiences`, Angular will redirect it to `/experiences/:region`. The Googlebot will get a `Server Side Rendered HTML`.
+    1. When a Googlebot visit `/experiences`, Angular will redirect it to `/experiences/:region`. The Googlebot will get a `pre-rendered HTML`.
     2. When a user visit `/experiences`, Angular will redirect it to `/experiences/:region`. The user will get a `Client Side Rendered HTML`.
-    3. The server periodically prerender new experience i.e. every 5 minutes.
+    3. The server periodically prerender the new experience i.e. every 5 minutes.
 
 Command to run:
 ```
@@ -67,6 +68,10 @@ Command to run:
 ```
 npm run serve:ssr
 ```
+
+# Solution to fix slow TTFB: Dynamic Rendering
+
+![Dynamic Rendering](./README_assets/mereka.io%20-%20Angular%20Universal%20-%20PoC%20_experiences-proposal.drawio.svg)
 
 # Result
 
