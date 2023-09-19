@@ -19,7 +19,7 @@ export class GetExperiencesDataSource {
       .search<GetExperiencesResponse>("", {
         // blocker: if we use SSR, `hitsPerPage: 8`. The TTFB is very slow.
         // solution: SSR 4 items, CSR the rest.
-        hitsPerPage: 8
+        hitsPerPage: 4
       })
 
     return promise;

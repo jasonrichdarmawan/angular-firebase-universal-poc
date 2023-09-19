@@ -1,8 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { GetExperiencesDataSource } from '../../../data/datasources/get-experiences.datasource';
-import { GetExperiencesUseCase } from '../../../domain/usecases/get-experiences.service';
-import { Experience } from '../../../domain/entities/experiences.entity';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 
 @Component({
@@ -11,16 +7,9 @@ import { Meta } from '@angular/platform-browser';
   styleUrls: ['./experiences.component.scss']
 })
 export class ExperiencesComponent implements OnInit {
-  isBrowser: boolean;
-
-  experiences: Experience[] = [];
-
   constructor(
-    @Inject(PLATFORM_ID) platformID: string,
     private meta: Meta,
-    private getExperiencesUseCase: GetExperiencesUseCase
   ) {
-    this.isBrowser = isPlatformBrowser(platformID);
     this.meta.updateTag(
       { 
         name: "description", 
@@ -30,16 +19,5 @@ export class ExperiencesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.updateExperiences();
-  }
-
-  updateExperiences() {
-    this.getExperiencesUseCase.get()
-    .then((response) => {
-      this.experiences = response;
-    })
-    .catch((error) => {
-      console.log(error);
-    })
   }
 }

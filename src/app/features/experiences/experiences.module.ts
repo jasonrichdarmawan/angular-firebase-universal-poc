@@ -1,27 +1,30 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgOptimizedImage, NgOptimizedImageModule } from '@angular/common';
+import { CommonModule, NgOptimizedImageModule } from '@angular/common';
 
 import { ExperiencesRoutingModule } from './experiences-routing.module';
 import { ExperiencesComponent } from './presentation/pages/experiences/experiences.component';
 import { GetExperiencesDataSource } from './data/datasources/get-experiences.datasource';
 import { GetExperiencesUseCase } from './domain/usecases/get-experiences.service';
+import { ExperiencesListComponent } from './presentation/components/experiences-list/experiences-list.component';
 
 
 @NgModule({
   declarations: [
-    ExperiencesComponent
+    ExperiencesComponent,
+
+    ExperiencesListComponent
   ],
   imports: [
     CommonModule,
     ExperiencesRoutingModule,
     
     // TODO: standalone component in Angular 14
-    // for ExperienceComponent
+    // for ExperiencesListComponent
     NgOptimizedImageModule
   ],
   providers: [
     // TODO: standalone component in Angular 14
-    // for ExperiencesComponent
+    // for ExperiencesListComponent
     GetExperiencesUseCase,
     GetExperiencesDataSource
   ],
