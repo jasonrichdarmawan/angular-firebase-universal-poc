@@ -1,2 +1,11 @@
 <a routerLink="">Go to Home</a>
 <p>experience works!</p>
+<div *ngIf="experience != null">
+    <div class="bordered">
+        <ng-container *ngIf="isBrowser && experience.coverPhoto.url">
+            <img [ngSrc]="experience.coverPhoto.url" width="100" height="100" priority [alt]="experience.title">
+        </ng-container>
+        <div>{{experience.location.city}}, {{ experience.location.country }}</div>
+        <div>{{experience.title}}</div>
+    </div>
+</div>

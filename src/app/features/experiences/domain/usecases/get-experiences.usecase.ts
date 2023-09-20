@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Experience } from '../entities/experiences.entity';
+import { ExperienceForListEntity } from '../entities/experience-for-list.entity';
 import { GetExperiencesDataSource } from '../../data/datasources/get-experiences.datasource';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class GetExperiencesUseCase {
               expertiseLevel: hit.expertiseLevel,
               primaryLanguage: hit.primaryLanguage,
               slug: hit.slug
-            } as Experience
+            } as ExperienceForListEntity
           })
       })
 

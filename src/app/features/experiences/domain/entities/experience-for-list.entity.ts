@@ -1,4 +1,4 @@
-export interface Experience {
+export interface ExperienceForListEntity {
     coverPhotoUrl: string
     city: string
     country: string

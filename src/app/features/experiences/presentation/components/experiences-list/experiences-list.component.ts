@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { GetExperiencesUseCase } from '../../../domain/usecases/get-experiences.usecase';
-import { Experience } from '../../../domain/entities/experiences.entity';
+import { ExperienceForListEntity } from '../../../domain/entities/experience-for-list.entity';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class ExperiencesListComponent implements OnInit {
   isBrowser: boolean;
 
-  experiences: Experience[] = [];
+  experiences: ExperienceForListEntity[] = [];
 
   constructor(
     @Inject(PLATFORM_ID) platformID: string,

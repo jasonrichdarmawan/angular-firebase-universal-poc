@@ -26,7 +26,7 @@ import { ExperiencesListComponent } from './presentation/components/experiences-
     // TODO: standalone component in Angular 14
     // for ExperiencesListComponent
     GetExperiencesUseCase,
-    GetExperiencesDataSource
+    GetExperiencesDataSource,
   ],
 })
 export class ExperiencesModule { }

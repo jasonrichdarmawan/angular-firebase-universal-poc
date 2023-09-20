@@ -36,6 +36,29 @@ Command to run:
 npx ng add @nguniversal/express-engine
 ```
 
+5. Install AngularFire
+
+    Possible issue: 
+    1. `npx ng add @angular/fire`
+        
+        ```
+        ✖ Package install failed.
+        /Users/jason/Work/mereka/angular-firebase-universal-poc/node_modules/@angular-devkit/schematics/node_modules/rxjs/internal/util/hostReportError.js:4
+            setTimeout(function () { throw err; }, 0);
+        ```
+
+    [issue](https://github.com/angular/angularfire/issues/3105)
+
+    solution: run `npm i -D firebase-tools` before `npx ng add @angular/fire`
+
+Command to run
+```
+npm i -D firebase-tools
+npx ng add @angular/fire
+```
+
+If prompted `What features would you like to setup`, uncheck `ng deploy -- hosting` and check `Firestore`.
+
 # Solution to fix slow TTFB: Prerender
 
 1. Prerender
@@ -68,6 +91,12 @@ Command to run:
 ```
 npm run serve:ssr
 ```
+
+# Banned things in SSR
+
+1. no `<ng-container *ngIf="experience != null>"`
+
+    use `<div *ngIf="experience != null">`
 
 # Solution to fix slow TTFB: Dynamic Rendering
 
