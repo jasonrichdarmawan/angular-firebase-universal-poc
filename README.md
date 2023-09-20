@@ -92,11 +92,9 @@ Command to run:
 npm run serve:ssr
 ```
 
-# Banned things in SSR
+# TODO
 
-1. no `<ng-container *ngIf="experience != null>"`
-
-    use `<div *ngIf="experience != null">`
+- [ ] `/experience/:experience` is not server side rendered.
 
 # Solution to fix slow TTFB: Dynamic Rendering
 
