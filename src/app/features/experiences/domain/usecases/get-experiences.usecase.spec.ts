@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetExperiencesUseCase } from './get-experiences-use-case.service';
+import { GetExperiencesUseCase } from './get-experiences.usecase';
 
 describe('GetExperiencesUseCaseService', () => {
   let service: GetExperiencesUseCase;

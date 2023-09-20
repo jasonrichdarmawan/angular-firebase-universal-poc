@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { GetExperiencesUseCase } from '../../../domain/usecases/get-experiences.service';
+import { GetExperiencesUseCase } from '../../../domain/usecases/get-experiences.usecase';
 import { Experience } from '../../../domain/entities/experiences.entity';
 import { isPlatformBrowser } from '@angular/common';
 

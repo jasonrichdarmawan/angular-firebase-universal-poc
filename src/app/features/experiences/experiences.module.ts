@@ -4,7 +4,7 @@ import { CommonModule, NgOptimizedImageModule } from '@angular/common';
 import { ExperiencesRoutingModule } from './experiences-routing.module';
 import { ExperiencesComponent } from './presentation/pages/experiences/experiences.component';
 import { GetExperiencesDataSource } from './data/datasources/get-experiences.datasource';
-import { GetExperiencesUseCase } from './domain/usecases/get-experiences.service';
+import { GetExperiencesUseCase } from './domain/usecases/get-experiences.usecase';
 import { ExperiencesListComponent } from './presentation/components/experiences-list/experiences-list.component';
 
 
