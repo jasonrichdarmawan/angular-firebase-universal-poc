@@ -5,6 +5,7 @@ export interface GetExperiencesResponse {
     title: string
     expertiseLevel: string
     primaryLanguage: string
+    slug: string
 }
 
 interface Address {

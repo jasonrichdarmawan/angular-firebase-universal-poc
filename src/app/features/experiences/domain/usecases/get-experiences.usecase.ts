@@ -20,7 +20,8 @@ export class GetExperiencesUseCase {
               country: hit.address?.country ?? "",
               title: hit.title,
               expertiseLevel: hit.expertiseLevel,
-              primaryLanguage: hit.primaryLanguage
+              primaryLanguage: hit.primaryLanguage,
+              slug: hit.slug
             } as Experience
           })
       })

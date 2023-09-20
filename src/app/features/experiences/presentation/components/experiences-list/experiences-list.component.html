@@ -6,7 +6,7 @@
             <img [ngSrc]="experience.coverPhotoUrl" width="100" height="100" priority [alt]="experience.title">
         </ng-container>
         <div>{{experience.city}}, {{ experience.country }}</div>
-        <div>{{experience.title}}</div>
+        <a routerLink="/experience/{{experience.slug}}">{{experience.title}}</a>
         <div>{{experience.expertiseLevel}} | {{experience.primaryLanguage}}</div>
     </div>
 </ng-container>

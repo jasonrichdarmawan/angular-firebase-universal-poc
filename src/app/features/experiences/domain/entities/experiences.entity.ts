@@ -5,4 +5,5 @@ export interface Experience {
     title: string
     expertiseLevel: string
     primaryLanguage: string
+    slug: string
 }
