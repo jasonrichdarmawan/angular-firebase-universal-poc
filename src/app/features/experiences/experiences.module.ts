@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImageModule } from '@angular/common';
 
 import { ExperiencesRoutingModule } from './experiences-routing.module';
-import { ExperiencesComponent } from './presentation/pages/experiences/experiences.component';
+import { ExperiencesPage } from './presentation/pages/experiences/experiences.page';
 import { GetExperiencesDataSource } from './data/datasources/get-experiences.datasource';
 import { GetExperiencesUseCase } from './domain/usecases/get-experiences.usecase';
 import { ExperiencesListComponent } from './presentation/components/experiences-list/experiences-list.component';
@@ -10,7 +10,7 @@ import { ExperiencesListComponent } from './presentation/components/experiences-
 
 @NgModule({
   declarations: [
-    ExperiencesComponent,
+    ExperiencesPage,
 
     ExperiencesListComponent
   ],

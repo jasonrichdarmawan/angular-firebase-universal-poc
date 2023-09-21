@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExperiencesComponent } from './presentation/pages/experiences/experiences.component';
+import { ExperiencesPage } from './presentation/pages/experiences/experiences.page';
 
 const routes: Routes = [
   {
     path: "",
     // TODO: loadComponent in Angular 14
-    component: ExperiencesComponent
+    component: ExperiencesPage
   }
 ];
 

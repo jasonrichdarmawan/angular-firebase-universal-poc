@@ -1,9 +1,9 @@
-import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { GetExperienceBySlugUseCase } from '../../../domain/usecases/get-experience-by-slug.usecase';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ExperienceEntity } from '../../../domain/entities/experience.entity';
-import { Subscription, filter, firstValueFrom, map } from 'rxjs';
-import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-experience',
@@ -26,21 +26,22 @@ export class ExperienceComponent implements OnInit {
   ) {
     this.isBrowser = isPlatformBrowser(platformID);
     this.slug = this.route.snapshot.paramMap.get('experience');
-
-    if (this.slug == null) { return }
-
-    this.getExperienceBySlug(this.slug);
   }
 
   ngOnInit(): void {
+    this.getExperienceBySlug();
   }
 
-  getExperienceBySlug(slug: string) {
+  getExperienceBySlug() {
+    if (this.slug == null) { return; }
+    
     let subscription = this.getExperienceBySlugUseCase
-      .get(slug)
-      .subscribe(value => this.experience = value)
+      .get(this.slug)
+      .subscribe(value => {
+        this.experience = value;
+      });
 
-    this.subscriptions.add(subscription)
+    this.subscriptions.add(subscription);
   }
 
   ngOnDestroy(): void {

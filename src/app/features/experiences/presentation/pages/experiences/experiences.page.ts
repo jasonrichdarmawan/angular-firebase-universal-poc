@@ -3,10 +3,10 @@ import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-experiences',
-  templateUrl: './experiences.component.html',
-  styleUrls: ['./experiences.component.scss']
+  templateUrl: './experiences.page.html',
+  styleUrls: ['./experiences.page.scss']
 })
-export class ExperiencesComponent implements OnInit {
+export class ExperiencesPage implements OnInit {
   constructor(
     private meta: Meta,
   ) {
